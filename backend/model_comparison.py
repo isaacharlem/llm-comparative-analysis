@@ -2,7 +2,7 @@
 # 
 # This file is licensed under the BSD 3-Clause License.
 # Copyright (c) 2024, UChicago Data Science Institute
-# See the LICENSE-bsd file for details.
+# See the LICENSE-BSD file for details.
 
 import os
 import json

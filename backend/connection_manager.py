@@ -2,7 +2,7 @@
 #
 # This file is licensed under the MIT License.
 # Copyright (c) 2025, Isaac Harlem
-# See the LICENSE-app file for details.
+# See the LICENSE-MIT file for details.
 
 from fastapi import WebSocket
 import asyncio
