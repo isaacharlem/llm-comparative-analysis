@@ -136,5 +136,7 @@ The generated reports will remain in the reports/ directory.
 * Ollama Service:
     If the Ollama service fails to start, try re-running chmod +x docker/entrypoint.sh and docker-compose up --build.
 
-This project is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License](LICENSE).
+## Licenses
 
+- **BSD 3-Clause License** (`licenses/LICENSE-bsd`): Applies only to `model_comparison.py`.
+- **MIT License** (`licenses/LICENSE-app`): Applies to all other files in this repository.
