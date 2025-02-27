@@ -111,7 +111,7 @@ Once the containers are running:
 ### 6. Using the Web Application
 On the frontend page:
 1. Enter a Query: Type your question or prompt.
-2. List Models: Provide model identifiers as a comma-separated list (e.g., deepseek-r1:1.5b, qwen:1.8b). Ensure these models match those pulled by the Ollama service.
+2. List Models: Provide model identifiers as a comma-separated list (e.g., deepseek-r1:1.5b, qwen:1.8b). Ensure these models match those pulled by the Ollama service. Note that if you want to test Ollama models other than deepseek-r1:1.5b, qwen:1.8b, or phi3:mini, you must also update the pull commands in docker/entrypoint.sh.
 3. Set Number of Responses: Choose the number of responses each model should generate.
 4. Reference Answer (Optional): Enter a reference answer to compute BLEU and ROUGE-L scores.
 5. Click Generate Report.
