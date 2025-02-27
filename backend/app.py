@@ -1,3 +1,9 @@
+# app.py
+#
+# This file is licensed under the MIT License.
+# Copyright (c) 2025, Isaac Harlem
+# See the LICENSE-app file for details.
+
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles

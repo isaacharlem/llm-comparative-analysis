@@ -1,3 +1,9 @@
+# model_comparison.py
+# 
+# This file is licensed under the BSD 3-Clause License.
+# Copyright (c) 2024, UChicago Data Science Institute
+# See the LICENSE-bsd file for details.
+
 import os
 import json
 import time
@@ -400,13 +406,6 @@ async def process_model_report(query: str, model: str, n: int, reference: str = 
       <br/>
       {("" if reference == "" else f"<p><strong>Avg BLEU vs Reference:</strong> {sum([compute_bleu(reference, r) for r in responses])/len(responses):.4f}</p>")}
       {("" if reference == "" else f"<p><strong>Avg ROUGE-L F1 vs Reference:</strong> {sum([compute_rouge_l(reference, r) for r in responses])/len(responses):.4f}</p>")}
-      <p class="score-explanation">
-        <em>
-        BLEU Score measures n-gram overlap between candidate and reference, indicating precision in matching phrases.
-        ROUGE-L F1 Score reflects the longest common subsequence between candidate and reference, balancing recall and precision.
-        Here, each response’s BLEU and ROUGE-L scores are computed against the best response of the model.
-        </em>
-      </p>
     </section>
     """
     summary = {
