@@ -50,7 +50,6 @@ async def websocket_endpoint(ws: WebSocket):
         # Notify start of processing
         await ws.send_json({"event": "status", "message": f"Starting report generation for query: '{query}'"})
 
-        # (Optional: You could iterate over models here and send incremental updates)
         # Generate the full comparative report, passing the WebSocket for progress updates.
         filename = await generate_comparative_report(query, models, n, reference, ws)
 
