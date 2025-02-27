@@ -13,9 +13,9 @@ This project provides a web application to compare responses from multiple Large
 ## Features
 
 - **Multi-Model Query:** Ask a question once and get responses from multiple LLMs.
-- **Automated Metrics:** Computes cosine similarity between response embeddings to find the most consistent answer, plus BLEU and ROUGE-L scores if a reference answer is provided.
+- **Automated Metrics:** Computes cosine similarity between response embeddings to find the most consistent answer, plus BLEU and ROUGE-L scores that use the most consistent answer from each model as the reference.
 - **Visualizations:** Includes PCA plots of embeddings, similarity distribution histograms, heatmaps, and summary bar charts.
-- **Interactive Web UI:** Easy-to-use React frontend with real-time progress updates as models generate responses.
+- **Interactive Web UI:** React frontend with real-time progress updates as models generate responses.
 - **Reports Archive:** Each run produces an HTML report saved in a persistent volume (`reports/` directory) for later viewing.
 
 ## Architecture
