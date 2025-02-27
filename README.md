@@ -71,8 +71,8 @@ Follow these steps after cloning the repository:
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repo-url>
-cd COGS_PROJ
+git clone https://github.com/isaacharlem/llm-comparative-analysis.git
+cd llm-comparative-analysis
 ```
 
 ### 2. (Optional) Initialize Git
