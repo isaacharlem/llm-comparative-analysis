@@ -1,0 +1,15 @@
+# Use Node.js image to build the React app
+FROM node:18-alpine AS build
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci
+COPY . .
+RUN npm run build
+
+# Use an nginx image to serve the static files (or use caddy/serve)
+FROM nginx:alpine
+COPY --from=build /app/build /usr/share/nginx/html
+# Copy a default nginx config (optional, to handle routing)
+# In this case, not needed if just static files.
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
