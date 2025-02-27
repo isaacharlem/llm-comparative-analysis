@@ -25,7 +25,7 @@ This project provides a web application to compare responses from multiple Large
 After cloning, your repository should have the following structure:
 
 ```
-COGS_PROJ/
+llm-comparative-analysis/
 ├── .gitignore             # Ignore node_modules, build artifacts, etc.
 ├── README.md
 ├── docker-compose.yml
