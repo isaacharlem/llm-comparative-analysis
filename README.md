@@ -55,7 +55,7 @@ llm-comparative-analysis/
         └── index.js
 ``````
 
-*Note:* The `node_modules/` folder is not committed (and is listed in `.gitignore`).
+*Note:* The `node_modules/` folder and `package-lock.json` is not committed (and is listed in `.gitignore`).
 
 ## Prerequisites
 
