@@ -3,8 +3,7 @@
 ## Overview
 This project provides a web application to compare responses from multiple Large Language Models (LLMs) side by side, with automated analysis. It generates a comprehensive HTML report containing the models' answers to a given query, along with similarity metrics and visualizations.
 
-- **`model_comparison.py`** is derived from code originally developed by the UChicago Data Science Institute and is licensed under the BSD 3-Clause License (see `licenses/LICENSE-bsd`). 
-- All **other files** in this repository are authored by Isaac Harlem and are licensed under the MIT License (see `licenses/LICENSE-app`).
+This project uses two different licenses for different parts. Please see [Licenses](#licenses) below.
 
 ## References
 - [Self-Consistency Improves Chain Of Thought Reasoning in Language Models](https://arxiv.org/abs/2203.11171)
@@ -139,5 +138,5 @@ The generated reports will remain in the reports/ directory.
 
 ## Licenses
 
-- **BSD 3-Clause License** (`licenses/LICENSE-bsd`): Applies only to `model_comparison.py`.
-- **MIT License** (`licenses/LICENSE-app`): Applies to all other files in this repository.
+- `model_comparison.py` is derived from code originally developed by the UChicago Data Science Institute and is licensed under the BSD 3-Clause License (see [licenses/LICENSE-bsd](licenses/LICENSE-bsd)).
+- All other files in this repository are authored by Isaac Harlem and are licensed under the MIT License (see [licenses/LICENSE-app](licenses/LICENSE-app)).
