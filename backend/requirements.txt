@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+httpx
+requests
+numpy
+matplotlib
+seaborn
+scikit-learn
+tqdm
+nltk     # for BLEU (requires nltk data for usage, optional)

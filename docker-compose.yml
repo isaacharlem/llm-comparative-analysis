@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile.frontend
+    container_name: llm_frontend
+    ports:
+      - "3000:3000"   # development server port (if using npm start)
+      - "8080:80"     # production server port (if using a static server like serve or nginx)
+    depends_on:
+      - backend
+
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile.backend
+    container_name: llm_backend
+    environment:
+      - OLLAMA_URL=http://ollama:11434    # base URL to connect to Ollama service
+      - EMBEDDING_MODEL=smollm:135m       # embedding model name for Ollama
+      - MPLBACKEND=Agg                   # use non-GUI matplotlib backend for safety
+    volumes:
+      - ./reports:/reports               # mount host directory for reports persistence
+    ports:
+      - "8000:8000"                     # FastAPI port
+
+  ollama:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile.ollama
+    container_name: ollama
+    ports:
+      - "11434:11434"                  # Expose Ollama's default API port
+    volumes:
+      - ollama_models:/root/.ollama     # Cache models on host
+
+volumes:
+  ollama_models:

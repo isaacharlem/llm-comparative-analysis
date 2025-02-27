@@ -1,0 +1,16 @@
+# Ignore node modules
+frontend/node_modules/
+frontend/package-lock.json
+
+# Ignore generated reports
+reports/
+
+# Ignore Python compiled files
+*.pyc
+__pycache__/
+
+# Ignore OS generated files
+.DS_Store
+
+# Ignore environment variables
+.env
