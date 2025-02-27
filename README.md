@@ -5,6 +5,11 @@ This project provides a web application to compare responses from multiple Large
 ## Author
 - Isaac Harlem (isaacharlem@uchicago.edu)
 
+## References
+- [Self-Consistency Improves Chain Of Thought Reasoning in Language Models](https://arxiv.org/abs/2203.11171)
+- [DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning](https://arxiv.org/abs/2501.12948)
+- [Qwen Technical Report](https://github.com/QwenLM/Qwen/blob/main/QWEN_TECHNICAL_REPORT.pdf)
+
 ## Features
 
 - **Multi-Model Query:** Ask a question once and get responses from multiple LLMs.
