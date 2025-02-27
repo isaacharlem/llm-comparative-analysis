@@ -134,7 +134,7 @@ The generated reports will remain in the reports/ directory.
 * Default 404 on Root:
     The FastAPI backend is API-only and may return 404 for the root path. You can add a simple route in backend/app.py if desired.
 * Ollama Service:
-    If the Ollama service fails to start, try re-running chmod +x docker/entrypoint.sh and docker-compose up --build.
+    If the Ollama service fails to start, try re-running ```chmod +x docker/entrypoint.sh``` and ```docker-compose up --build```.
 
 ## Licenses
 
