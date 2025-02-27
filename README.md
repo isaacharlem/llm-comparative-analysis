@@ -138,5 +138,5 @@ The generated reports will remain in the reports/ directory.
 
 ## Licenses
 
-- `model_comparison.py` is derived from code originally developed by the UChicago Data Science Institute and is licensed under the BSD 3-Clause License (see [licenses/LICENSE-bsd](licenses/LICENSE-bsd.md)).
-- All other files in this repository are authored by Isaac Harlem and are licensed under the MIT License (see [licenses/LICENSE-app](licenses/LICENSE-app.md)).
+- `model_comparison.py` is derived from code originally developed by the UChicago Data Science Institute and is licensed under the BSD 3-Clause License (see [licenses/LICENSE-bsd](licenses/LICENSE-bsd)).
+- All other files in this repository are authored by Isaac Harlem and are licensed under the MIT License (see [licenses/LICENSE-app](licenses/LICENSE-app)).
