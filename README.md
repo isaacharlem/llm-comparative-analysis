@@ -23,7 +23,7 @@ This project provides a web application to compare responses from multiple Large
 - **Frontend:** React app (SPA) that connects via WebSocket to the backend for live updates. Users input the query and model names here.
 - **Backend:** FastAPI server that orchestrates calls to the LLM engine (Ollama) and computes metrics. Exposes a WebSocket endpoint for progress and serves the final reports.
 - **LLM Engine:** [Ollama](https://github.com/ollama/ollama) is used to run LLMs and embedding models locally (supports CPU, Apple MPS, and NVIDIA GPUs).
-- **Containerization:** Docker Compose is used to containerize the frontend, backend, and Ollama services for easy deployment across different environments (development laptops, servers, Slurm clusters, etc.).
+- **Containerization:** Docker Compose is used to containerize the frontend, backend, and Ollama services for easy deployment across different environments.
 
 ## Repository Structure
 
