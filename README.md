@@ -74,14 +74,7 @@ Follow these steps after cloning the repository:
 git clone https://github.com/isaacharlem/llm-comparative-analysis.git
 cd llm-comparative-analysis
 ```
-
-### 2. (Optional) Initialize Git
-If not already a Git repository, initialize it:
-```bash
-git init
-```
-
-### 3. Frontend Setup
+### 2. Frontend Setup
 Navigate to the frontend directory and install the dependencies.
 ```bash
 cd frontend
@@ -89,14 +82,14 @@ npm install
 ```
 This will generate a consistent package-lock.json. (The node_modules/ folder is not committed.)
 
-### 4. Ensure the Ollama Entrypoint Script Is Executable
+### 3. Ensure the Ollama Entrypoint Script Is Executable
 Return to the repository root and set executable permission on the entrypoint script:
 ```bash
 cd ..
 chmod +x docker/entrypoint.sh
 ```
 
-### 5. Build and Start All Containers
+### 4. Build and Start All Containers
 From the repository root, run:
 ```bash
 docker-compose up --build
@@ -106,7 +99,7 @@ This command will:
 2. Build the Backend: Using Dockerfile.backend to install Python dependencies and run the FastAPI app.
 3. Build the Ollama Service: Using docker/Dockerfile.ollama with the provided entrypoint.sh script, which pulls the required models (smollm:135m, deepseek-r1:1.5b, qwen:1.8b) and then starts the Ollama server.
 
-### 6. Access the Application
+### 5. Access the Application
 Once the containers are running:
 * Frontend:
     Open your browser at http://localhost:8080 (for production build via Nginx) or http://localhost:3000 if using the development server.
@@ -115,7 +108,7 @@ Once the containers are running:
 * Ollama Service:
     Runs on http://localhost:11434.
 
-### 7. Using the Web Application
+### 6. Using the Web Application
 On the frontend page:
 1. Enter a Query: Type your question or prompt.
 2. List Models: Provide model identifiers as a comma-separated list (e.g., deepseek-r1:1.5b, qwen:1.8b). Ensure these models match those pulled by the Ollama service.
@@ -124,7 +117,7 @@ On the frontend page:
 5. Click Generate Report.
 Real-time progress will be shown via WebSocket updates. Once completed, the final report (an HTML page) will be displayed in an embedded frame and saved in the reports/ directory.
 
-### 8. Stopping the Application
+### 7. Stopping the Application
 To stop all services, press Ctrl+C in the terminal running Docker Compose or run:
 ```bash
 docker-compose down
