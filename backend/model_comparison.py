@@ -351,8 +351,8 @@ async def process_model_report(query: str, model: str, n: int, reference: str = 
     # Compute BLEU and ROUGE-L scores for each response compared to the best response.
     individual_scores = {}
     for idx, response in enumerate(responses):
-        bleu_score = compute_bleu(top_resp, response)
-        rouge_score = compute_rouge_l(top_resp, response)
+        bleu_score = compute_bleu(reference, response)
+        rouge_score = compute_rouge_l(reference, response)
         individual_scores[idx] = {"bleu": bleu_score, "rouge": rouge_score}
 
     row_strs = []
@@ -494,8 +494,8 @@ async def generate_comparative_report(query: str, model_list: list, n: int, refe
         {report_sections}
         <br/>
         <p class="score-explanation">
-          <strong>BLEU Score:</strong> Measures n-gram overlap between candidate and reference, indicating precision in matching phrases.
-          <strong>ROUGE-L F1 Score:</strong> Reflects the longest common subsequence between candidate and reference, balancing recall and precision.
+          <strong>BLEU Score:</strong> Measures n-gram overlap between candidate and reference, indicating precision in matching phrases with the human response.
+          <strong>ROUGE-L F1 Score:</strong> Reflects the longest common subsequence between candidate and reference, balancing recall and precision with the human response.
         </p>
       </body>
     </html>
