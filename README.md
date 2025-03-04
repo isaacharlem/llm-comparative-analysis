@@ -23,7 +23,7 @@ This project uses two different licenses for different parts. Please see [Licens
 - **Frontend:** React app (SPA) that connects via WebSocket to the backend for live updates. Users input the query and model names here.
 - **Backend:** FastAPI server that orchestrates calls to the LLM engine (Ollama) and computes metrics. Exposes a WebSocket endpoint for progress and serves the final reports.
 - **LLM Engine:** [Ollama](https://github.com/ollama/ollama) is used to run LLMs and embedding models locally (supports CPU, Apple MPS, and NVIDIA GPUs).
-- **Containerization:** Docker Compose is used to containerize the frontend, backend, and Ollama services for easy deployment across different environments.
+- **Containerization:** Docker Compose is used to containerize the frontend and backend services for easy deployment across different environments.
 
 ## Repository Structure
 
@@ -40,9 +40,8 @@ llm-comparative-analysis/
 │   ├── app.py
 │   ├── model_comparison.py
 │   └── requirements.txt
-├── docker/
-│   ├── Dockerfile.ollama
-│   └── entrypoint.sh
+├── ollama/
+│   └── setup.sh
 └── frontend/
     ├── Dockerfile.frontend
     ├── package.json
@@ -68,13 +67,23 @@ llm-comparative-analysis/
 
 Follow these steps after cloning the repository:
 
-### 1. Clone the Repository
+### 1. Install Ollama and some models
+
+Use the instructions [here](https://ollama.com/download) to install Ollama. After that, run the following commands:
+
+```bash
+chmod +x ollama/setup.sh
+./ollama/setup.sh
+```
+
+### 2. Clone the Repository
 
 ```bash
 git clone https://github.com/isaacharlem/llm-comparative-analysis.git
 cd llm-comparative-analysis
 ```
-### 2. Frontend Setup
+
+### 3. Frontend Setup
 Navigate to the frontend directory and install the dependencies.
 ```bash
 cd frontend
@@ -82,12 +91,6 @@ npm install
 ```
 This will generate a consistent package-lock.json. (The node_modules/ folder is not committed.)
 
-### 3. Ensure the Ollama Entrypoint Script Is Executable
-Return to the repository root and set executable permission on the entrypoint script:
-```bash
-cd ..
-chmod +x docker/entrypoint.sh
-```
 
 ### 4. Build and Start All Containers
 From the repository root, run:
@@ -97,7 +100,6 @@ docker-compose up --build
 This command will:
 1. Build the Frontend: Using Dockerfile.frontend to install Node.js dependencies, build the React app, and serve it via Nginx.
 2. Build the Backend: Using Dockerfile.backend to install Python dependencies and run the FastAPI app.
-3. Build the Ollama Service: Using docker/Dockerfile.ollama with the provided entrypoint.sh script, which pulls the required models (smollm:135m, deepseek-r1:1.5b, qwen:1.8b) and then starts the Ollama server.
 
 ### 5. Access the Application
 Once the containers are running:
@@ -133,8 +135,6 @@ The generated reports will remain in the reports/ directory.
     For NVIDIA GPU support, ensure Docker is configured with the NVIDIA Container Toolkit. You can adjust GPU settings in docker-compose.yml if needed. For Apple M1/M2, Docker Desktop should automatically handle hardware acceleration.
 * Default 404 on Root:
     The FastAPI backend is API-only and may return 404 for the root path. You can add a simple route in backend/app.py if desired.
-* Ollama Service:
-    If the Ollama service fails to start, try re-running ```chmod +x docker/entrypoint.sh``` and ```docker-compose up --build```.
 
 ## Licenses
 
